@@ -94,6 +94,7 @@ module.exports = class JSCoord {
 	/**
    * Invert Z axis value.
    */
+<<<<<<< HEAD
 	invZ () {
 		this.z = 0 - this.z
 		return this
@@ -109,6 +110,23 @@ module.exports = class JSCoord {
 		}
 	}
 	/**
+=======
+  invZ() {
+    this.z = 0 - this.z
+    return this
+  }
+  getArray() {
+    return [this.x, this.y, this.z]
+  }
+  getObject() {
+    return {
+      x: this.x,
+      y: this.y,
+      z: this.z
+    }
+  }
+  /**
+>>>>>>> 00911a56b9c678d7ca4e5877a4f08cf2ab75c8b6
    *
    * @param {Number[]} size
    */
@@ -117,12 +135,21 @@ module.exports = class JSCoord {
 		/**
      * @type {Number[]}
      */
+<<<<<<< HEAD
 		if (this.x > x || this.x < 0 - x || this.y > y || this.y < 0 - y || this.z > z || this.z < 0 - z) { throw new Error("Can not set map size as one or more coordinates exceed new map size.") } else {
 			this.map = { x, y, z }
 			return this
 		}
 	}
 	/**
+=======
+    if (this.x > x || this.x < 0 - x || this.y > y || this.y < 0 - y || this.z > z || this.z < 0 - z) throw new Error("Can not set map size as one or more coordinates exceed new map size, use reset() to fix this."); else {
+      this.map = {x, y, z}
+      return this
+    }
+  }
+  /**
+>>>>>>> 00911a56b9c678d7ca4e5877a4f08cf2ab75c8b6
    * Set X to provided value.
    * @param {Number} val
    */
@@ -146,10 +173,28 @@ module.exports = class JSCoord {
    * Set Z to provided value.
    * @param {Number} val
    */
+<<<<<<< HEAD
 	setZ (val) {
 		if (this.map && this.map.z && (val > this.map.z || val < 0 - this.map.z)) { throw new Error("New value does not fit in Map range.") } else {
 			this.z = val
 			return this
 		}
 	}
+=======
+  setZ(val) {
+    if (this.map && this.map.z && (val > this.map.z || val < 0 - this.map.z)) throw new Error("New value does not fit in Map range."); else {
+      this.z = val
+      return this
+    }
+  }
+  /**
+  * Resets X, Y, Z to 0.
+  */
+  reset() {
+    this.x = 0
+    this.y = 0
+    this.z = 0
+    return this
+}
+>>>>>>> 00911a56b9c678d7ca4e5877a4f08cf2ab75c8b6
 }
