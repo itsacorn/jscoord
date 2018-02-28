@@ -156,9 +156,9 @@ module.exports = class JSCoord {
   * Resets X, Y, Z to 0.
   */
   reset() {
-    this.x = 0;
-    this.y = 0;
-    this.z = 0;
-    return this;
+    this.x = 0
+    this.y = 0
+    this.z = 0
+    return this
 }
 }
