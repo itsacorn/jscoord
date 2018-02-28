@@ -87,5 +87,5 @@ coords.getObject() // {x: 20, y: 0, z: 0}
 Returns the X, Y and Z axis values as an array. `.getArray()[0]` contains the X axis, `.getArray()[1]` the Y axis and `.getArray()[2]` the Z axis.
 
 ```js
-coords.getArray() // [X, Y, Z]
+coords.getArray() // [x, y, z]
 ```

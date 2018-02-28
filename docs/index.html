@@ -1,0 +1,188 @@
+<html>
+  <html>
+    <title>JSCoord</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,700" rel="stylesheet"> 
+    <style>
+      body {
+        margin: 0;
+        font-family: "Montserrat Alternatives", sans-serif;
+        color: #191919;
+      }
+      .header {
+        /*color: #f0f0f0;
+        background: linear-gradient(135deg, #eb3423, #b4544b);*/
+        background: #191919;
+        padding: 0 20px;
+      }
+      .header > div {
+        display: bock;
+        max-width: 900px;
+        margin: auto;
+      }
+      .header > div > .title {
+        color: #b4544b;
+        font-weight: 700;
+        font-size: 92px;
+        margin: 0;
+        padding-top: 80px;
+      }
+      .header > div > .subtitle {
+        color: #f0f0f0;
+        margin: 0;
+        font-size: 18px;
+        padding-bottom: 80px;
+      }
+      .header > div > .links {
+        position: relative;
+        bottom: 11px;
+      }
+      .header > div > .links > a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #f0f0f09d;
+      }
+      .header > div > .links > a:not(:last-of-type) {
+        margin-right: 12px;
+      }
+      .header > div > .links > a:hover {
+        text-decoration: none;
+        color: #f0f0f0cc;
+      }
+      .section {
+        min-height: 40px;
+        padding: 40px 40px;
+        background-color: #f8f8f8;
+        background-color: #191919;
+        color: #f0f0f0;
+      }
+      .section > div {
+        max-width: 900px;
+        margin: auto;
+      }
+      .section > div > .title {
+        font-weight: 700;
+        font-size: 32px;
+        margin: 0;
+      }
+      .section > div > .subtitle {
+        font-size: 18px;
+        margin: 0;
+      }
+      .section > div > .mtitle {
+        margin: 0;
+        margin-top: 20px;
+        border-left: 3px solid #b4544b;
+        padding-left: 16px;
+      }
+      hr.seperator {
+        max-width: 900px;
+        width: 90%;
+        margin: auto;
+        border-top: none;
+        border-bottom: 1px solid #313131;
+        margin-top: -1px;
+      }
+      div#documentation code {
+        background-color: #212121;
+        padding: 3px;
+        border-radius: 3px;
+      }
+      div#documentation pre {
+        display: block;
+        background-color: #212121;
+        padding: 17px;
+        border-radius: 9px;
+        font-family: monospace;
+      }
+      div#documentation span.name {
+        font-size: 15px;
+        margin-top: 27px;
+        display: block;
+        margin-bottom: 15px;
+      }
+      div#documentation .method {
+        display: block;
+        margin-left: 16px;
+        padding-left: 16px;
+        border-left: 3px solid #f0f0f0;
+        margin-top: 34px;
+      }
+      .hljs-selector-tag {
+        color: #fd6883;
+      }
+      .hljs-selector-class {
+        color: #adda78;
+      }
+      .hljs-number {
+        color: #a8a9eb;
+      }
+      .hljs-other {
+        color: #f9cc6c;
+      }
+      .hljs-comment {
+        color: #72696a;
+        font-style: italic;
+      }
+    </style>
+  </html>
+  <body>
+    <div class="header">
+      <div>
+        <h1 class="title">JSCoord</h1>
+        <p class="subtitle">A simple Map coordinate system for Javascript.</p>
+        <div class="links">
+          <a href="#documentation">Documentation</a>
+          <a href="https://github.com/itsacorn/jscoord">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <hr class="seperator">
+    <div class="section">
+      <div>
+        <p class="subtitle">JSCoord is a simple coordinate library for Javascript. It features basic mutation methods for X, Y and Z and also provides a "Map" feature, which means you can limit the size of each Set. Modify each axis value with the built-in methods or easily add custom methods with a simple API.</p>
+      </div>
+    </div>
+    <hr class="seperator">
+    <div class="section">
+      <div id="documentation">
+        <h1 class="title">Documentation</h1>
+        <h3 class="mtitle">Methods</h3>
+        <div class="method">
+          <span class="name"><code>.incrX(amount)</code>, <code>.incrY(amount)</code>, <code>.incrZ(amount)</code></span>
+          Increments the specified axis by <code>amount</code>. If <code>amount</code> parameter is not provided, increments by 1.
+          <pre>coords<span class="hljs-selector-class">.incrX</span>(<span class="hljs-number">10</span>)</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.decrX(amount)</code>, <code>.frcrY(amount)</code>, <code>.decrZ(amount)</code></span>
+          Decrements the specified axis by <code>amount</code>. If <code>amount</code> parameter is not provided, decrements by 1.
+          <pre>coords<span class="hljs-selector-class">.decrX</span>(<span class="hljs-number">10</span>)</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.setX(amount)</code>, <code>.setY(amount)</code>, <code>.setZ(amount)</code></span>
+          Sets the axis value to <code>val</code>.
+          <pre>coords<span class="hljs-selector-class">.setX</span>(<span class="hljs-number">20</span>)</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.invX()</code>, <code>.invY()</code>, <code>.invZ()</code></span>
+          "Inverts" the number, so it becomes its negative/positive version. 3 becomes -3, -3 becomes 3 and so on.
+          <pre>coords<span class="hljs-selector-class">.invX</span>()</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.setMap(x, y, z)</code></span>
+          Sets the maximum range for each axis. It sets the maximum to the provided number and the minimum to the negative of the provided number. Other methods will fail if they are out of range. This will fail if axis is above limit already.
+          <pre>coords<span class="hljs-selector-class">.setMap</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.getObject()</code></span>
+          Returns the X, Y and Z axis values as an object.
+          <pre>coords<span class="hljs-selector-class">.getObject</span>() <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
+        </div>
+        <div class="method">
+            <span class="name"><code>.getArray()</code></span>
+            Returns the X, Y and Z axis values as an array. <code>.getArray()[0]</code> contains the X axis, <code>.getArray()[1]</code> the Y axis and <code>.getArray()[2]</code> the Z axis.
+            <pre>coords<span class="hljs-selector-class">.getArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
