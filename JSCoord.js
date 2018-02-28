@@ -19,7 +19,7 @@ module.exports = class JSCoord {
   }
   /**
    * Increase X by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   incrX(amount = 1) {
     if (this.map && this.map.x && (this.x + amount > this.map.x || this.x + amount < 0 - this.map.x)) throw new Error("New amount exceeds maximum map size."); else {
@@ -29,7 +29,7 @@ module.exports = class JSCoord {
   }
   /**
    * Decrease X by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   decrX(amount = 1) {
     if (this.map && this.map.x && (this.x + amount > this.map.x || this.x + amount < 0 - this.map.x)) throw new Error("New amount does not exceed minimum map size."); else {
@@ -39,7 +39,7 @@ module.exports = class JSCoord {
   }
   /**
    * Increase Y by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   incrY(amount = 1) {
     if (this.map && this.map.y && (this.y + amount > this.map.y || this.y + amount < 0 - this.map.y)) throw new Error("New amount exceeds maximum map size."); else {
@@ -49,7 +49,7 @@ module.exports = class JSCoord {
   }
   /**
    * Decrease Y by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   decrY(amount = 1) {
     if (this.map && this.map.y && (this.y + amount > this.map.y || this.y + amount < 0 - this.map.y)) throw new Error("New amount does not exceed minimum map size."); else {
@@ -59,7 +59,7 @@ module.exports = class JSCoord {
   }
   /**
    * Increase Z by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   incrZ(amount = 1) {
     if (this.map && this.map.z && (this.z + amount > this.map.z || this.z + amount < 0 - this.map.z)) throw new Error("New amount exceeds maximum map size."); else {
@@ -69,7 +69,7 @@ module.exports = class JSCoord {
   }
   /**
    * Decrease Z by amount.
-   * @param {Number} amount 
+   * @param {Number} amount
    */
   decrZ(amount = 1) {
     if (this.map && this.map.z && (this.z + amount > this.map.z || this.z + amount < 0 - this.map.z)) throw new Error("New amount does not exceed minimum map size."); else {
@@ -109,8 +109,8 @@ module.exports = class JSCoord {
     }
   }
   /**
-   * 
-   * @param {Number[]} size 
+   *
+   * @param {Number[]} size
    */
   setMap(...size) {
     let x = size[0][0] || size[0], y = size[0][1] || size[1] || size[0][0] || size[0], z = size[0][2] || size[2]
@@ -152,4 +152,13 @@ module.exports = class JSCoord {
       return this
     }
   }
+  /**
+  * Resets X, Y, Z to 0.
+  */
+  reset() {
+    this.x = 0;
+    this.y = 0;
+    this.z = 0;
+    return this;
+}
 }
