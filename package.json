@@ -1,6 +1,6 @@
 {
   "name": "jscoord",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple Map coordinate system for NodeJS and potentially the browser.",
   "main": "index.js",
   "keywords": [
@@ -11,5 +11,9 @@
     "maps"
   ],
   "author": "acorn",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/itsacorn/jscoord",
+    "type": "git"
+  }
 }
