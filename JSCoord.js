@@ -117,7 +117,7 @@ module.exports = class JSCoord {
     /**
      * @type {Number[]}
      */
-    if (this.x > x || this.x < 0 - x || this.y > y || this.y < 0 - y || this.z > z || this.z < 0 - z) throw new Error("Can not set map size as one or more coordinates exceed new map size."); else {
+    if (this.x > x || this.x < 0 - x || this.y > y || this.y < 0 - y || this.z > z || this.z < 0 - z) throw new Error("Can not set map size as one or more coordinates exceed new map size, use reset() to fix this."); else {
       this.map = {x, y, z}
       return this
     }
