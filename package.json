@@ -1,6 +1,6 @@
 {
   "name": "jscoord",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple Map coordinate system for NodeJS and potentially the browser.",
   "main": "index.js",
   "keywords": [
