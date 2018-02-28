@@ -97,5 +97,5 @@ coords.getArray() // [x, y, z]
 Resets all of the X, Y and Z values to 0.
 
 ```js
-coords.reset() // {x: 0, y: 0, z: 0}
+coords.reset()
 ```
