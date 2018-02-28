@@ -91,3 +91,11 @@ Returns the X, Y and Z axis values as an array. `.getArray()[0]` contains the X 
 ```js
 coords.getArray() // [x, y, z]
 ```
+
+#### `.reset()`
+
+Resets all of the X, Y and Z values to 0.
+
+```js
+coords.reset() // {x: 0, y: 0, z: 0}
+```
