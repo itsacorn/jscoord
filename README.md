@@ -13,7 +13,7 @@ npm i jscoord --save
 Once its installed, you can import it into your application by adding this to the top of the script:
 
 ```js
-const {JSCoord} = require("jscoord")
+const { JSCoord } = require("jscoord")
 ```
 
 Or if you use Typescript/Webpack:
