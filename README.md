@@ -2,6 +2,8 @@
 
 JSCoord is a simple coordinate and map system for JS. It provides a simple API for manipulating coordinates and setting maps(limits).  
 
+JSCoord's [Website](https://coord.js.org). Also contains documentation :)  
+
 ## Basic Usage  
 
 Install JSCoord using NPM:
