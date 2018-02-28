@@ -1,0 +1,15 @@
+{
+  "name": "jscoord",
+  "version": "0.0.3",
+  "description": "A simple Map coordinate system for NodeJS and potentially the browser.",
+  "main": "index.js",
+  "keywords": [
+    "coord",
+    "coordinates",
+    "coords",
+    "map",
+    "maps"
+  ],
+  "author": "acorn",
+  "license": "MIT"
+}
