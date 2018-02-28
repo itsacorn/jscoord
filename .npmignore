@@ -1,2 +1,6 @@
 docs
-CNAME
+package-lock.json
+LICENSE
+README.md
+docs
+.gitignore
