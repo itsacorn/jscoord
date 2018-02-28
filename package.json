@@ -15,5 +15,9 @@
   "repository": {
     "url": "https://github.com/itsacorn/jscoord",
     "type": "git"
-  }
+  },
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
+  "pre-commit": [ "lint" ]
 }

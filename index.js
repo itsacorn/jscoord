@@ -1,3 +1,3 @@
 module.exports = {
-  JSCoord: require("./JSCoord")
+	JSCoord: require("./JSCoord"),
 }
