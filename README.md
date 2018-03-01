@@ -76,12 +76,12 @@ Sets the maximum range for each axis. It sets the maximum to the provided number
 coords.setMap(100, 100, 100)
 ```
 
-#### `.getObject()`
+#### `.getJSON()`
 
 Returns the X, Y and Z axis values as an object.
 
 ```js
-coords.getObject() // {x: 20, y: 0, z: 0}
+coords.getJSON() // {x: 20, y: 0, z: 0}
 ```
 
 #### `.getArray()`
@@ -98,4 +98,28 @@ Resets all of the X, Y and Z values to 0.
 
 ```js
 coords.reset()
+```
+
+#### `.rlt(x, y, z)`
+
+Set the relativity of the current coordinates from the provided coordinate set perpective.
+
+```js
+coords.rlt(10, 20, 30)
+```
+
+#### `.getRltJSON()`
+
+Get the relativity set as an object.
+
+```js
+coords.getRltJSON() // {x: 1, y: 2, z: 3}
+```
+
+#### `.getRltArray()`
+
+Get the relativity set as an array.
+
+```js
+coords.getRltArray() // [x, y, z]
 ```

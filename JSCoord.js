@@ -1,4 +1,4 @@
-module.exports = class JSCoord {
+class JSCoord {
 	/**
    * @param {Number[]} coordinates
    */
@@ -101,7 +101,7 @@ module.exports = class JSCoord {
 	getArray () {
 		return [this.x, this.y, this.z]
 	}
-	getObject () {
+	getJSON () {
 		return {
 			x: this.x,
 			y: this.y,
@@ -153,12 +153,47 @@ module.exports = class JSCoord {
 		}
   }
   /**
-   * Resets X, Y, Z to 0.
+   * Resets x, y, z to 0.
    */
-  reset() {
+  reset () {
     this.x = 0
     this.y = 0
     this.z = 0
     return this
   }
+  /**
+   * Get value difference of 2 coordinate sets.
+   * @param {Number} x 
+   * @param {Number} y 
+   * @param {Number} z 
+   */
+  rlt (x, y, z) {
+    this.relativitySet = {
+      x: x - this.x,
+      y: y - this.y,
+      z: z - this.z
+    }
+    return this
+  }
+  /**
+   * Get the calculated relativity as an object.
+   */
+  getRltJSON () {
+    return {
+      x: this.relativitySet.x,
+      y: this.relativitySet.y,
+      z: this.relativitySet.z
+    }
+  }
+  /**
+   * Get the calculated relativity as an array.
+   */
+  getRltArray () {
+    return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
+  }
 }
+
+module.exports = JSCoord
+
+let m = new JSCoord(100, 100, 100)
+console.log(m.rlt(101,102,104))

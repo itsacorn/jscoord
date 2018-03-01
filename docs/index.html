@@ -175,7 +175,7 @@
           <pre>coords<span class="hljs-selector-class">.setMap</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</pre>
         </div>
         <div class="method">
-          <span class="name"><code>.getObject()</code></span>
+          <span class="name"><code>.getJSON()</code></span>
           Returns the X, Y and Z axis values as an object.
           <pre>coords<span class="hljs-selector-class">.getObject</span>() <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
         </div>
@@ -188,6 +188,21 @@
           <span class="name"><code>.reset()</code></span>
           Resets all of the X, Y and Z values to 0.
           <pre>coords<span class="hljs-selector-class">.reset</span>()</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.rlt(x, y, z)</code></span>
+          Resets all of the X, Y and Z values to 0.
+          <pre>coords<span class="hljs-selector-class">.rlt</span>(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>)</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.getRltJSON()</code></span>
+          Get the relativity set as an object.
+          <pre>coords<span class="hljs-selector-class">getRltJSON</span>()<span class="hljs-comment">// {x: 1, y: 2, z: 3}</span>/</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.getRltArray()</code></span>
+          Get the relativity set as an array.
+          <pre>coords<span class="hljs-selector-class">getRltArray</span>()<span class="hljs-comment">// [x, y, z]</span>/</pre>
         </div>
       </div>
     </div>
