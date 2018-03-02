@@ -5,14 +5,17 @@ class JSCoord {
 	constructor (...coordinates) {
 		let x = coordinates[0][0] || coordinates[0], y = coordinates[0][1] || coordinates[1] || coordinates[0][0] || coordinates[0], z = coordinates[0][2] || coordinates[2]
 		/**
+		 * !! Do NOT directly modify this variable. You should only ever read from it. !!
      * @type {Number}
      */
 		this.x = x
 		/**
+		 * !! Do NOT directly modify this variable. You should only ever read from it. !!
      * @type {Number}
      */
 		this.y = y
 		/**
+		 * !! Do NOT directly modify this variable. You should only ever read from it. !!
      * @type {Number}
      */
 		this.z = z
@@ -123,6 +126,18 @@ class JSCoord {
 		}
 	}
 	/**
+   * Get Map as Array.
+   */
+	getMapArray () {
+		return [this.map.x, this.map.y, this.map.z]
+	}
+	/**
+   * Get Map as Object.
+   */
+	getMapArray () {
+		return this.map
+	}
+	/**
    * Set X to provided value.
    * @param {Number} val
    */
@@ -179,21 +194,14 @@ class JSCoord {
    * Get the calculated relativity as an object.
    */
   getRltJSON () {
-    return {
-      x: this.relativitySet.x,
-      y: this.relativitySet.y,
-      z: this.relativitySet.z
-    }
+    return this.relativitySet
   }
   /**
    * Get the calculated relativity as an array.
    */
   getRltArray () {
     return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
-  }
+	}
 }
 
 module.exports = JSCoord
-
-let m = new JSCoord(100, 100, 100)
-console.log(m.rlt(101,102,104))

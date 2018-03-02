@@ -32,6 +32,16 @@ let coords = new JSCoord(x, y, z)
 
 And there you have it! `coords` will be a new JSCoords instance. You can now mutate it using the provided methods.
 
+## Properties
+
+#### `.x`, `.y`, `.z`
+
+Get X, Y or Z value. **Do NOT modify these variables, they can break your coordinate set.**
+
+```js
+coords.x
+```
+
 ## Methods
 
 JSCoord provides some basic mutation methods. They can be used to modify the coordinate set in different ways.
@@ -74,6 +84,22 @@ Sets the maximum range for each axis. It sets the maximum to the provided number
 
 ```js
 coords.setMap(100, 100, 100)
+```
+
+#### `.getMapJSON()`
+
+Get Map as Object.
+
+```js
+coords.getMapJSON() // {x: 20, y: 0, z: 0}
+```
+
+#### `.getMapArray()`
+
+Get Map as Array.
+
+```js
+coords.getMapArray() // [x, y, z]
 ```
 
 #### `.getJSON()`
