@@ -35,7 +35,7 @@ class JSCoord {
    * @param {Number} amount
    */
 	decrX (amount = 1) {
-		if (this.map && this.map.x && (this.x + amount > this.map.x || this.x + amount < 0 - this.map.x)) { throw new Error("New amount does not exceed minimum map size.") } else {
+		if (this.map && this.map.x && (this.x - amount > this.map.x || this.x - amount < 0 - this.map.x)) { throw new Error("New amount does not exceed minimum map size.") } else {
 			this.x -= amount
 			return this
 		}
@@ -55,7 +55,7 @@ class JSCoord {
    * @param {Number} amount
    */
 	decrY (amount = 1) {
-		if (this.map && this.map.y && (this.y + amount > this.map.y || this.y + amount < 0 - this.map.y)) { throw new Error("New amount does not exceed minimum map size.") } else {
+		if (this.map && this.map.y && (this.y - amount > this.map.y || this.y - amount < 0 - this.map.y)) { throw new Error("New amount does not exceed minimum map size.") } else {
 			this.y -= amount
 			return this
 		}
@@ -75,7 +75,7 @@ class JSCoord {
    * @param {Number} amount
    */
 	decrZ (amount = 1) {
-		if (this.map && this.map.z && (this.z + amount > this.map.z || this.z + amount < 0 - this.map.z)) { throw new Error("New amount does not exceed minimum map size.") } else {
+		if (this.map && this.map.z && (this.z - amount > this.map.z || this.z - amount < 0 - this.map.z)) { throw new Error("New amount does not exceed minimum map size.") } else {
 			this.z -= amount
 			return this
 		}
