@@ -1,3 +1,4 @@
 module.exports = {
-	JSCoord: require("./JSCoord"),
+	JSCoord: require("./src/JSCoord"),
+	CoordChunk: require("./src/CoordChunk")
 }

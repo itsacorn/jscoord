@@ -32,17 +32,17 @@ let coords = new JSCoord(x, y, z)
 
 And there you have it! `coords` will be a new JSCoords instance. You can now mutate it using the provided methods.
 
-## Properties
+### Properties
 
 #### `.x`, `.y`, `.z`
 
-Get X, Y or Z value. **Do NOT modify these variables, they can break your coordinate set.**
+Get X, Y or Z value. **Do NOT modify these variables, they can break your coordinate set.** 
 
 ```js
 coords.x
 ```
 
-## Methods
+### Methods
 
 JSCoord provides some basic mutation methods. They can be used to modify the coordinate set in different ways.
 
@@ -149,3 +149,69 @@ Get the relativity set as an array.
 ```js
 coords.getRltArray() // [x, y, z]
 ```
+
+## CoordChunk
+
+CoordChunk is another feature of JSCoord. Its basically an Array of Sets with some extra functions. When creating a CoordChunk instance, you can pass a parameter to set the maximum size of the set.
+
+```js
+const { CoordChunk } = require("jscoord")
+```
+
+Or if you use Typescript/Webpack:
+
+```ts
+import { CoordChunk } from "jscoord";
+```
+
+Then, to create a new instance: 
+
+```js
+let chunk = new CoordChunk(10)
+```
+
+### Properties
+
+`.limit`
+
+Maximum length of chunk. **Do NOT modify this variable, it can break your coordinate set.**
+
+```js
+chunk.limit
+```
+
+`.sets`
+
+Array in which Sets are stored. **Do NOT modify this variable, it can break your coordinate set.**
+
+```js
+chunk.sets
+```
+
+### Methods
+
+`.addSet(coords)`
+
+Add a Set to the Chunk. `coords` can be an Array with coordinate values `([x, y, z])` or a JSCoord instance. You can not have 2 of the same coordinate sets in the same chunk.
+
+```js
+chunk.addSet(new JSCoord(100, 100, 100))
+```
+
+`.getSet(coords)`
+
+Find a Set by coordinates. Throws if Set could not be found.
+
+```js
+chunk.getSet([100, 100, 100])
+```
+
+`.delSet(coords)`
+
+Delete a Set from the Chunk. `coords` can be an Array with coordinate values or a JSCoord instance. Throws if Set could not be found.
+
+```js
+chunk.delSet([100, 100, 100])
+```
+
+

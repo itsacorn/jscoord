@@ -60,7 +60,7 @@
         margin: auto;
       }
       .section > div > .title {
-        font-weight: 700;
+        font-weight: 400;
         font-size: 32px;
         margin: 0;
       }
@@ -124,6 +124,9 @@
         color: #72696a;
         font-style: italic;
       }
+      .hljs-support {
+        color: #85dacc;
+      }
     </style>
   </html>
   <body>
@@ -147,15 +150,18 @@
     <hr class="seperator">
     <div class="section">
       <div id="documentation">
-        <h1 class="title">Documentation</h1>
+        <h1 class="title"><b>Documentation</b> - JSCoord</h1>
+        <div class="method">
+          <span class="name"><code>new JSCoord([x, y, z])</code></span>
+          Create a new JSCoord Set.
+          <pre><span class="hljs-support">let</span> coords = <span class="hljs-selector-tag">new</span> <span class="hljs-selector-class">JSCoord</span>([<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>])</pre>
+        </div>
         <h3 class="mtitle">Properties</h3>
         <div class="method">
           <span class="name"><code>.x</code>, <code>.y</code>, <code>.z</code></span>
           Get X, Y or Z value. <b>Do NOT modify these variables, they can break your coordinate set.</b>
           <pre>coords<span class="hljs-selector-tag">.x</span></pre>
         </div>
-
-
         <h3 class="mtitle">Methods</h3>
         <div class="method">
           <span class="name"><code>.incrX(amount)</code>, <code>.incrY(amount)</code>, <code>.incrZ(amount)</code></span>
@@ -215,12 +221,47 @@
         <div class="method">
           <span class="name"><code>.getRltJSON()</code></span>
           Get the relativity set as an object.
-          <pre>coords<span class="hljs-selector-class">getRltJSON</span>() <span class="hljs-comment">// {x: 1, y: 2, z: 3}</span></pre>
+          <pre>coords<span class="hljs-selector-class">.getRltJSON</span>() <span class="hljs-comment">// {x: 1, y: 2, z: 3}</span></pre>
         </div>
         <div class="method">
           <span class="name"><code>.getRltArray()</code></span>
           Get the relativity set as an array.
-          <pre>coords<span class="hljs-selector-class">getRltArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+          <pre>coords<span class="hljs-selector-class">.getRltArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+        </div>
+
+
+        <h1 class="title"><b>Documentation</b> - CoordChunk</h1>
+        <div class="method">
+          <span class="name"><code>new CoordChunk(maxLength)</code></span>
+          Create a new Coordinate Chunk.
+          <pre><span class="hljs-support">let</span> chunk = <span class="hljs-selector-tag">new</span> <span class="hljs-selector-class">CoordChunk</span>(<span class="hljs-number">10</span>)</pre>
+        </div>
+        <h3 class="mtitle">Properties</h3>
+        <div class="method">
+          <span class="name"><code>.sets</code></span>
+          Array in which Sets are stored. <b>Do NOT modify this variable, it can break your coordinate set.</b>
+          <pre>chunk<span class="hljs-selector-tag">.sets</span></pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.limit</code></span>
+          Maximum length of chunk. <b>Do NOT modify this variable, it can break your coordinate set.</b>
+          <pre>chunk<span class="hljs-selector-tag">.limit</span></pre>
+        </div>
+        <h3 class="mtitle">Methods</h3>
+        <div class="method">
+          <span class="name"><code>.addSet(coords)</code></span>
+          Add a Set to the Chunk. <code>coords</code> can be an Array with coordinate values <code>([x, y, z])</code> or a JSCoord instance. You can not have 2 of the same coordinate sets in the same chunk.
+          <pre>coords<span class="hljs-selector-class">.addSet</span>(<span class="hljs-selector-tag">new</span> <span class="hljs-selector-class">JSCoord</span>([<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>])</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.getSet(coords)</code></span>
+          Find a Set by coordinates. Throws if Set could not be found.
+          <pre>coords<span class="hljs-selector-class">.getSet</span>([<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>])</pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.delSet(coords)</code></span>
+          Delete a Set from the Chunk. <code>coords</code> can be an Array with coordinate values or a JSCoord instance. Throws if Set could not be found.
+          <pre>coords<span class="hljs-selector-class">.delSet</span>([<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>])</pre>
         </div>
       </div>
     </div>
