@@ -2,7 +2,9 @@
 
 JSCoord is a simple coordinate and map system for JS. It provides a simple API for manipulating coordinates and setting maps(limits).  
 
-JSCoord's [Website](https://coord.js.org). Also contains documentation :)  
+JSCoord's [Website](https://coord.js.org). Also contains documentation :) 
+
+[![NPM](https://nodei.co/npm/jscoord.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/jscoord/) 
 
 ## Basic Usage  
 
