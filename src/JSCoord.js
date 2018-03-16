@@ -166,46 +166,46 @@ class JSCoord {
 			this.z = val
 			return this
 		}
-	}
-	/**
+  }
+  /**
    * Resets x, y, z to 0.
    */
-	reset () {
-		this.x = 0
-		this.y = 0
-		this.z = 0
-		return this
-	}
-	/**
+  reset () {
+    this.x = 0
+    this.y = 0
+    this.z = 0
+    return this
+  }
+  /**
    * Get value difference of 2 coordinate sets.
-   * @param {Number} x
-   * @param {Number} y
-   * @param {Number} z
+   * @param {Number} x 
+   * @param {Number} y 
+   * @param {Number} z 
    */
-	rlt (x, y, z) {
-		this.relativitySet = {
-			x: x - this.x,
-			y: y - this.y,
-			z: z - this.z,
-		}
-		return this
-	}
-	/**
+  rlt (x, y, z) {
+    this.relativitySet = {
+      x: x - this.x,
+      y: y - this.y,
+      z: z - this.z
+    }
+    return this
+  }
+  /**
    * Get the calculated relativity as an object.
    */
-	get rltJSON () {
-		return this.relativitySet
-	}
-	/**
+  get rltJSON () {
+    return this.relativitySet
+  }
+  /**
    * Get the calculated relativity as an array.
    */
-	get rltArray () {
-		return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
+  get rltArray () {
+    return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
 	}
 	/**
-	 *
+	 * 
 	 * @param {String} set
-	 * Get the angle of 2 coordinate set values.
+	 * Get the angle of 2 coordinate set values. 
 	 */
 	getRltAngle (set) {
 		if (set.toLowerCase() == "xy" || set.toLowerCase() == "yx") {
