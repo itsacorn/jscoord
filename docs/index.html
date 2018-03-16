@@ -189,24 +189,24 @@
           <pre>coords<span class="hljs-selector-class">.setMap</span>(<span class="hljs-number">100</span>, <span class="hljs-number">100</span>, <span class="hljs-number">100</span>)</pre>
         </div>
         <div class="method">
-          <span class="name"><code>.getMapJSON()</code></span>
+          <span class="name"><code>.mapJSON</code></span>
           Get Map as Object.
-          <pre>coords<span class="hljs-selector-class">.getMapJSON</span>() <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
+          <pre>coords<span class="hljs-selector-class">.mapJSON</span> <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
         </div>
         <div class="method">
-            <span class="name"><code>.getMapArray()</code></span>
+            <span class="name"><code>.mapArray</code></span>
             Get Map as Array.
-            <pre>coords<span class="hljs-selector-class">.getMapArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+            <pre>coords<span class="hljs-selector-tag">.mapArray</span> <span class="hljs-comment">// [x, y, z]</span></pre>
         </div>
         <div class="method">
-          <span class="name"><code>.getJSON()</code></span>
+          <span class="name"><code>.JSON</code></span>
           Returns the X, Y and Z axis values as an object.
-          <pre>coords<span class="hljs-selector-class">.getObject</span>() <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
+          <pre>coords<span class="hljs-selector-tag">.JSON</span> <span class="hljs-comment">// {x: 20, y: 0, z: 0}</span></pre>
         </div>
         <div class="method">
-            <span class="name"><code>.getArray()</code></span>
-            Returns the X, Y and Z axis values as an array. <code>.getArray()[0]</code> contains the X axis, <code>.getArray()[1]</code> the Y axis and <code>.getArray()[2]</code> the Z axis.
-            <pre>coords<span class="hljs-selector-class">.getArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+            <span class="name"><code>.array</code></span>
+            Returns the X, Y and Z axis values as an array. <code>.array[0]</code> contains the X axis, <code>.array[1]</code> the Y axis and <code>.array()[2]</code> the Z axis.
+            <pre>coords<span class="hljs-selector-tag">.array</span> <span class="hljs-comment">// [x, y, z]</span></pre>
         </div>
         <div class="method">
           <span class="name"><code>.reset()</code></span>
@@ -219,14 +219,19 @@
           <pre>coords<span class="hljs-selector-class">.rlt</span>(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>)</pre>
         </div>
         <div class="method">
-          <span class="name"><code>.getRltJSON()</code></span>
+          <span class="name"><code>.rltJSON</code></span>
           Get the relativity set as an object.
-          <pre>coords<span class="hljs-selector-class">.getRltJSON</span>() <span class="hljs-comment">// {x: 1, y: 2, z: 3}</span></pre>
+          <pre>coords<span class="hljs-selector-tag">.rltJSON</span> <span class="hljs-comment">// {x: 1, y: 2, z: 3}</span></pre>
         </div>
         <div class="method">
-          <span class="name"><code>.getRltArray()</code></span>
+          <span class="name"><code>.rltArray</code></span>
           Get the relativity set as an array.
-          <pre>coords<span class="hljs-selector-class">.getRltArray</span>() <span class="hljs-comment">// [x, y, z]</span></pre>
+          <pre>coords<span class="hljs-selector-tag">.rltArray</span> <span class="hljs-comment">// [x, y, z]</span></pre>
+        </div>
+        <div class="method">
+          <span class="name"><code>.getRltAngle()</code></span>
+          Get the angle of 2 coordinate set values. <code>set</code> is the 2 axies which should be used for calculation, can be <code>xy</code>, <code>yz</code> or <code>zx</code>.
+          <pre>coords<span class="hljs-selector-class">.getRltAngle(<span class="hljs-other">"xy"</span>)</span></pre>
         </div>
 
 

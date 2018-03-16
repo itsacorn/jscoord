@@ -16,7 +16,6 @@ module.exports = {
 		"curly": ["error", "multi-line", "consistent"],
 		"dot-location": ["error", "property"],
 		"dot-notation": "error",
-		"eqeqeq": "error",
 		"no-empty-function": "warn",
 		"no-floating-decimal": "error",
 		"no-implied-eval": "error",

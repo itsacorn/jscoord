@@ -88,36 +88,36 @@ Sets the maximum range for each axis. It sets the maximum to the provided number
 coords.setMap(100, 100, 100)
 ```
 
-#### `.getMapJSON()`
+#### `.mapJSON`
 
 Get Map as Object.
 
 ```js
-coords.getMapJSON() // {x: 20, y: 0, z: 0}
+coords.mapJSON // {x: 20, y: 0, z: 0}
 ```
 
-#### `.getMapArray()`
+#### `.mapArray`
 
 Get Map as Array.
 
 ```js
-coords.getMapArray() // [x, y, z]
+coords.mapArray // [x, y, z]
 ```
 
-#### `.getJSON()`
+#### `.JSON`
 
 Returns the X, Y and Z axis values as an object.
 
 ```js
-coords.getJSON() // {x: 20, y: 0, z: 0}
+coords.JSON // {x: 20, y: 0, z: 0}
 ```
 
-#### `.getArray()`
+#### `.array`
 
-Returns the X, Y and Z axis values as an array. `.getArray()[0]` contains the X axis, `.getArray()[1]` the Y axis and `.getArray()[2]` the Z axis.
+Returns the X, Y and Z axis values as an array. `.array[0]` contains the X axis, `.array[1]` the Y axis and `.array[2]` the Z axis.
 
 ```js
-coords.getArray() // [x, y, z]
+coords.array // [x, y, z]
 ```
 
 #### `.reset()`
@@ -136,20 +136,28 @@ Set the relativity of the current coordinates from the provided coordinate set p
 coords.rlt(10, 20, 30)
 ```
 
-#### `.getRltJSON()`
+#### `.rltJSON`
 
 Get the relativity set as an object.
 
 ```js
-coords.getRltJSON() // {x: 1, y: 2, z: 3}
+coords.rltJSON // {x: 1, y: 2, z: 3}
 ```
 
-#### `.getRltArray()`
+#### `.rltArray`
 
 Get the relativity set as an array.
 
 ```js
-coords.getRltArray() // [x, y, z]
+coords.rltArray // [x, y, z]
+```
+
+#### `.getRltAngle(set)`
+
+Get the angle of 2 coordinate set values. `set` is the 2 axies which should be used for calculation, can be `xy`, `yz` or `zx`.
+
+```js
+coords.getRltAngle("xy")
 ```
 
 ## CoordChunk

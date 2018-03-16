@@ -101,10 +101,10 @@ class JSCoord {
 		this.z = 0 - this.z
 		return this
 	}
-	getArray () {
+	get array () {
 		return [this.x, this.y, this.z]
 	}
-	getJSON () {
+	get JSON () {
 		return {
 			x: this.x,
 			y: this.y,
@@ -128,13 +128,13 @@ class JSCoord {
 	/**
    * Get Map as Array.
    */
-	getMapArray () {
+	get mapArray () {
 		return [this.map.x, this.map.y, this.map.z]
 	}
 	/**
    * Get Map as Object.
    */
-	getMapArray () {
+	get mapJSON () {
 		return this.map
 	}
 	/**
@@ -166,41 +166,58 @@ class JSCoord {
 			this.z = val
 			return this
 		}
-  }
-  /**
+	}
+	/**
    * Resets x, y, z to 0.
    */
-  reset () {
-    this.x = 0
-    this.y = 0
-    this.z = 0
-    return this
-  }
-  /**
+	reset () {
+		this.x = 0
+		this.y = 0
+		this.z = 0
+		return this
+	}
+	/**
    * Get value difference of 2 coordinate sets.
-   * @param {Number} x 
-   * @param {Number} y 
-   * @param {Number} z 
+   * @param {Number} x
+   * @param {Number} y
+   * @param {Number} z
    */
-  rlt (x, y, z) {
-    this.relativitySet = {
-      x: x - this.x,
-      y: y - this.y,
-      z: z - this.z
-    }
-    return this
-  }
-  /**
+	rlt (x, y, z) {
+		this.relativitySet = {
+			x: x - this.x,
+			y: y - this.y,
+			z: z - this.z,
+		}
+		return this
+	}
+	/**
    * Get the calculated relativity as an object.
    */
-  getRltJSON () {
-    return this.relativitySet
-  }
-  /**
+	get rltJSON () {
+		return this.relativitySet
+	}
+	/**
    * Get the calculated relativity as an array.
    */
-  getRltArray () {
-    return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
+	get rltArray () {
+		return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
+	}
+	/**
+	 *
+	 * @param {String} set
+	 * Get the angle of 2 coordinate set values.
+	 */
+	getRltAngle (set) {
+		if (set.toLowerCase() == "xy" || set.toLowerCase() == "yx") {
+			return Math.atan(this.relativitySet.y / this.relativitySet.x) * 180 / Math.PI
+		}
+		if (set.toLowerCase() == "yz" || set.toLowerCase() == "zy") {
+			return Math.atan(this.relativitySet.z / this.relativitySet.y) * 180 / Math.PI
+		}
+		if (set.toLowerCase() == "zx" || set.toLowerCase() == "xz") {
+			return Math.atan(this.relativitySet.x / this.relativitySet.z) * 180 / Math.PI
+		}
+		return undefined
 	}
 }
 
