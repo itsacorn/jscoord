@@ -2,8 +2,8 @@ class JSCoord {
 	/**
    * @param {Number[]} coordinates
    */
-	constructor (...coordinates) {
-		let x = coordinates[0][0] || coordinates[0], y = coordinates[0][1] || coordinates[1] || coordinates[0][0] || coordinates[0], z = coordinates[0][2] || coordinates[2]
+	constructor (coordinates) {
+		let x = coordinates[0] || 0, y = coordinates[1] || 0, z = coordinates[2] || 0
 		/**
 		 * !! Do NOT directly modify this variable. You should only ever read from it. !!
      * @type {Number}

@@ -2,7 +2,6 @@ const JSCoord = require("./JSCoord")
 class CoordChunk {
 	/**
    * Create a new Coordinate Chunk.
-   * @param {Number[]} boundaries
    * @param {Number} maxLength
   */
 	constructor (maxLength = Infinity) {
@@ -30,11 +29,11 @@ class CoordChunk {
 	}
 	/**
    * Get a Set from the Chunk.
-   * @param {Number[]} coords
+   * @param {Number[]} coords Index or coordinate set of target.
    * @returns {JSCoord}
    */
 	getSet (coords) {
-		let item = this.sets.find(t => t.x == coords[0] && t.y == coords[1] && t.z == coords[2])
+		let item = (typeof coords == "number") ? this.sets[coords] : this.sets.find(t => t.x == coords[0] && t.y == coords[1] && t.z == coords[2])
 		if (item) {
 			return item
 		} else {
