@@ -19,6 +19,17 @@ class JSCoord {
      * @type {Number}
      */
 		this.z = z
+		/**
+		 * The one variable you should modify. It can store any arbitrary data.
+		 */
+		this.data = new Proxy({}, {
+			set (o, p, v) {
+				return o[p] = v
+			},
+			get (o, p) {
+				return o[p]
+			}
+		})
 	}
 	/**
    * Increase X by amount.
@@ -101,6 +112,36 @@ class JSCoord {
 		this.z = 0 - this.z
 		return this
 	}
+	/**
+	 * Invert all axies.
+	 */
+	inv () {
+		this["x", "y", "z"] = [0 - this.x, 0 - this.y, 0 - this.z]
+		return this
+	}
+	/**
+	 * Increase all axies by amount.
+	 * @param {Number} amount
+	 */
+	incr (amount = 1) {
+		this["x", "y", "z"] = [this.x += 1, this.y += 1, this.z += 1]
+		return this
+	}
+	/**
+	 * Decrease all axies by amount.
+	 * @param {Number} amount
+	 */
+	decr (amount = 1) {
+		this["x", "y", "z"] = [this.x -= 1, this.y -= 1, this.z -= 1]
+		return this
+	}
+	/**
+	 * Invert all axies.
+	 */
+	inv () {
+		this["x", "y", "z"] = [0 - this.x, 0 - this.y, 0 - this.z]
+		return this
+	}
 	get array () {
 		return [this.x, this.y, this.z]
 	}
@@ -166,7 +207,7 @@ class JSCoord {
 			this.z = val
 			return this
 		}
-  }
+	}
   /**
    * Resets x, y, z to 0.
    */
@@ -178,29 +219,24 @@ class JSCoord {
   }
   /**
    * Get value difference of 2 coordinate sets.
-   * @param {Number} x 
-   * @param {Number} y 
-   * @param {Number} z 
+   * @param {Number[]} coordinates
    */
-  rlt (x, y, z) {
-    this.relativitySet = {
-      x: x - this.x,
-      y: y - this.y,
-      z: z - this.z
-    }
+  rlt (...coordinates) {
+		let x = coordinates[0][0] || coordinates[0], y = coordinates[0][1] || coordinates[1] || coordinates[0][0] || coordinates[0], z = coordinates[0][2] || coordinates[2]
+    this.relativitySet = { x, y, z }
     return this
   }
   /**
    * Get the calculated relativity as an object.
    */
   get rltJSON () {
-    return this.relativitySet
+    return { x: this.x - this.relativitySet.x, y: this.y - this.relativitySet.y, z: this.z - this.relativitySet.z }
   }
   /**
    * Get the calculated relativity as an array.
    */
   get rltArray () {
-    return [this.relativitySet.x, this.relativitySet.y, this.relativitySet.z]
+    return [this.x - this.relativitySet.x, this.y - this.relativitySet.y, this.z - this.relativitySet.z]
 	}
 	/**
 	 * 
@@ -209,13 +245,13 @@ class JSCoord {
 	 */
 	getRltAngle (set) {
 		if (set.toLowerCase() == "xy" || set.toLowerCase() == "yx") {
-			return Math.atan(this.relativitySet.y / this.relativitySet.x) * 180 / Math.PI
+			return Math.atan(this.y - this.relativitySet.y / this.x - this.relativitySet.x) * 180 / Math.PI
 		}
 		if (set.toLowerCase() == "yz" || set.toLowerCase() == "zy") {
-			return Math.atan(this.relativitySet.z / this.relativitySet.y) * 180 / Math.PI
+			return Math.atan(this.z - this.relativitySet.z / this.y - this.relativitySet.y) * 180 / Math.PI
 		}
 		if (set.toLowerCase() == "zx" || set.toLowerCase() == "xz") {
-			return Math.atan(this.relativitySet.x / this.relativitySet.z) * 180 / Math.PI
+			return Math.atan(this.x - this.relativitySet.x / this.z - this.relativitySet.z) * 180 / Math.PI
 		}
 		return undefined
 	}
